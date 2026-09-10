@@ -3,231 +3,316 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>东语言 · 项目主页</title>
+  <title>听见延安十三年 · 红色音乐高校美育平台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --color-text: #2c2c2c;
+      --color-bg: #faf8f5;
+      --color-accent: #8b1e1e;
+      --color-gold: #b8860b;
+      --font-serif: 'Noto Serif SC', serif;
+      --font-sans: 'Noto Sans SC', sans-serif;
     }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background-color: #fcfcf9;
-      color: #2e2e2c;
-      font-family: "Noto Serif SC", "Times New Roman", "宋体", "Songti SC", Georgia, serif;
-      line-height: 1.7;
-      padding: 2rem 1.5rem;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .project-title {
-      font-size: 2.4rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: #1e1e1c;
-      border-bottom: 1px solid #d9d7cd;
-      padding-bottom: 0.5rem;
-      display: inline-block;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      font-weight: 350;
-      color: #5f5e58;
-      margin: 0.5rem 0 1rem 0;
-      font-style: italic;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.8rem;
-      font-size: 1rem;
-      color: #4a4944;
-      border-bottom: 1px solid #e2e0d5;
-      padding-bottom: 0.7rem;
-      margin-bottom: 2rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #4a4944;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #b45f2a;
-      text-decoration: underline;
-    }
-
-    .description {
-      font-size: 1.15rem;
-      color: #3a3934;
-      text-align: justify;
-      margin-bottom: 1.5rem;
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
       line-height: 1.8;
     }
-
-    .description strong {
-      font-weight: 600;
-      color: #1f1f1d;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-
-    .feature-list {
-      list-style: none;
-      margin: 1rem 0 2rem 0;
+    .navbar h1 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-accent);
     }
-
-    .feature-list li {
-      font-size: 1.05rem;
-      padding: 0.3rem 0 0.3rem 1.8rem;
-      position: relative;
-      color: #3f3e38;
-    }
-
-    .feature-list li::before {
-      content: "→";
-      position: absolute;
-      left: 0.2rem;
-      color: #b45f2a;
-    }
-
-    .code-block {
-      background-color: #f4f3ef;
-      border-left: 4px solid #c9c4b5;
-      padding: 1.2rem 1.5rem;
-      font-family: "Courier New", monospace;
+    .navbar nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--color-text);
       font-size: 0.95rem;
-      color: #3b3a35;
-      margin: 1rem 0;
-      white-space: pre-wrap;
-      line-height: 1.6;
+    }
+    .navbar nav a:hover { color: var(--color-accent); }
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .hero h2 {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.4;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+    .hero-btns a {
+      display: inline-block;
+      margin: 0.4rem;
+      padding: 0.7rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+    }
+    .btn-primary {
+      background: var(--color-accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: #6d1515; }
+    .btn-outline {
+      border: 1.5px solid var(--color-accent);
+      color: var(--color-accent);
+    }
+    .btn-outline:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2rem 1.6rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-top: 4px solid var(--color-accent);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 28px rgba(139,30,30,0.12);
+    }
+    .card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.8rem;
+    }
+    .card p { font-size: 0.95rem; color: #555; }
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .section .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+    .section h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-gold);
+      margin: 1.8rem 0 0.6rem;
+    }
+    .section p {
+      font-size: 0.98rem;
+      color: #444;
+      margin-bottom: 0.8rem;
+    }
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--color-gold);
+      margin: 0 auto 2rem;
       border-radius: 2px;
     }
-
-    .example-box {
-      background: #fafaf7;
-      border: 1px solid #e4e1d6;
-      padding: 1.4rem 1.6rem;
-      margin: 1.5rem 0;
-      border-radius: 4px;
+    .img-placeholder {
+      width: 100%;
+      max-width: 500px;
+      margin: 1.5rem auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
-
-    .example-title {
-      font-weight: 550;
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-      color: #1f1f1c;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #e0ddd0;
-      margin: 2rem 0;
-    }
-
-    .footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #7a7970;
+    .img-caption {
       text-align: center;
-      border-top: 1px solid #e2dfd3;
-      padding-top: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+      margin-top: 0.5rem;
     }
-
-    .footer a {
-      color: #7a7970;
-      text-decoration: none;
-      border-bottom: 1px dotted #b7b3a4;
+    .steps {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.5rem 1.8rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin: 1.5rem 0;
     }
-
-    .footer a:hover {
-      color: #b45f2a;
+    .steps li {
+      margin-left: 1.2rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: #444;
     }
-
-    @media (max-width: 500px) {
-      body {
-        padding: 1.5rem 1rem;
-      }
-      .project-title {
-        font-size: 2rem;
-      }
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.9rem;
+      color: #999;
+      border-top: 1px solid #eee;
+      margin-top: 2rem;
+    }
+    footer a { color: var(--color-accent); text-decoration: none; }
+    @media (max-width: 600px) {
+      .navbar { flex-direction: column; gap: 0.8rem; padding: 1rem; }
+      .navbar nav a { margin: 0 0.8rem; font-size: 0.9rem; }
+      .hero h2 { font-size: 1.9rem; }
+      .hero { padding: 3rem 1.5rem 2rem; }
+      .section { padding: 3rem 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="project-title">东语言</h1>
-    <p class="subtitle">一种探索东方思维与简洁表达的实验语言</p>
-    
-    <div class="nav-links">
-      <a href="#">概览</a>
-      <a href="#">语法</a>
-      <a href="#">示例</a>
-      <a href="#">文档</a>
-      <a href="#">GitHub</a>
+
+  <!-- 顶部导航 -->
+  <header class="navbar">
+    <h1>听见延安十三年</h1>
+    <nav>
+      <a href=" ">历史脉络</a >
+      <a href="#music">音乐发展</a >
+      <a href="#works">作品赏析</a >
+      <a href="#practice">学唱实训</a >
+      <a href="#share">交流分享</a >
+    </nav>
+  </header>
+
+  <!-- 大标题 -->
+  <section class="hero">
+    <h2>听见延安十三年</h2>
+    <p>延安十三年红色音乐高校美育资源平台 —— 系统讲解红色音乐发展脉络，赏析经典作品，打造高校可借鉴的红色音乐学习平台。</p >
+    <div class="hero-btns">
+      <a href="#history" class="btn-primary">开始学习</a >
+      <a href="#works" class="btn-outline">作品赏析</a >
+    </div>
+  </section>
+
+  <!-- 三大核心板块 -->
+  <section class="features">
+    <div class="card">
+      <h3>历史学习</h3>
+      <p>延安十三年历史讲解、红色音乐发展脉络、延安精神内涵解读，帮助学生理解红色音乐的历史背景与精神内核。</p >
+    </div>
+    <div class="card">
+      <h3>作品赏析</h3>
+      <p>经典红色音乐作品赏析，如《山丹丹开花红艳艳》等，结合简谱、歌词与创作背景，深入理解作品的艺术与思政价值。</p >
+    </div>
+    <div class="card">
+      <h3>学唱实训</h3>
+      <p>红色歌曲学唱实训、学习成果交流分享，实现沉浸式、互动式的红色音乐学习体验。</p >
+    </div>
+  </section>
+
+  <!-- 历史脉络 -->
+  <section class="section" id="history">
+    <h2>历史学习</h2>
+    <div class="divider"></div>
+    <p class="subtitle">延安十三年 · 红色音乐的历史现场</p >
+
+    <h3>延安十三年历史讲解</h3>
+    <p>1935 年至 1948 年，中共中央在延安领导中国革命十三年，这段历史孕育了丰富的红色音乐文化，成为思政美育的重要资源。</p >
+
+    <h3>红色音乐发展脉络</h3>
+    <p>从鲁艺成立到文艺座谈会，从民间音乐采集到红色歌曲创作，延安时期的红色音乐走过了一条民族化、大众化、革命化的发展道路。</p >
+
+    <h3>延安精神内涵解读</h3>
+    <p>坚定正确的政治方向、解放思想实事求是、全心全意为人民服务、自力更生艰苦奋斗——延安精神是红色音乐最深层的灵魂。</p >
+
+    <h3>延安文艺纪念馆电子浏览</h3>
+    <p>（此处可嵌入延安文艺纪念馆线上浏览链接或图片资料）</p >
+  </section>
+
+  <!-- 作品赏析 -->
+  <section class="section" id="works">
+    <h2>红色音乐作品赏析</h2>
+    <div class="divider"></div>
+    <p class="subtitle">山丹丹开花红艳艳 · 经典赏析</p >
+
+    <h3>《山丹丹开花红艳艳》</h3>
+    <p>这首经典红色歌曲由关鹤岩、冯福宽、李若冰、刘烽集体作词，堂永诚记谱，中央乐团合唱团演唱。歌曲旋律高亢嘹亮，带有浓郁的陕北民歌风味。</p >
+
+    <!-- 简谱图片位置：把图片上传到仓库后，把 src 改成你的文件名 -->
+    < img src="shan-dan-dan.png" alt="山丹丹开花红艳艳 简谱" class="img-placeholder">
+    <p class="img-caption">《山丹丹开花红艳艳》简谱</p >
+
+    <h3>作品背景</h3>
+    <p>歌曲以陕北信天游为素材，描绘了中央红军到达陕北时人民群众热烈欢迎的场景，表达了军民鱼水情深与革命乐观主义精神。</p >
+
+    <h3>艺术特点</h3>
+    <p>旋律采用陕北民歌的调式与节奏，情感真挚、朗朗上口，既有地方特色，又有时代气息。</p >
+
+    <h3>思政价值</h3>
+    <p>通过赏析这首作品，学生可以理解红色音乐如何承载革命情感、传播理想信念，在美的体验中接受思政教育。</p >
+  </section>
+
+  <!-- 学唱实训 -->
+  <section class="section" id="practice">
+    <h2>红色歌曲学唱实训</h2>
+    <div class="divider"></div>
+    <p class="subtitle">跟着简谱，唱起来</p >
+
+    <h3>学唱步骤</h3>
+    <div class="steps">
+      <ol>
+        <li>先听一遍原唱，感受旋律与情感</li>
+        <li>对照简谱，逐句学唱</li>
+        <li>注意陕北民歌的装饰音与咬字</li>
+        <li>跟着伴奏完整演唱</li>
+        <li>录制演唱视频，上传到学习成果交流区</li>
+      </ol>
     </div>
 
-    <p class="description">
-      <strong>东语言 (dong-language)</strong> 是一个极简主义的人造语言项目，受东方哲学与自然语言演化启发。
-      它试图用最少的规则与词汇，构建清晰、优雅且富有诗意的表达。该项目完全开源，
-      欢迎语言爱好者、创作者与开发者共同实验。
-    </p>
-    
-    <p class="description">
-      设计原则：<strong>一字一义，音形相合。</strong> 语法透明，避免冗余修饰。句子结构遵循"话题-说明"逻辑，
-      使思维流动如水墨。目前处于早期开发阶段，核心词汇约200词。
-    </p>
+    <h3>学唱提示</h3>
+    <p>《山丹丹开花红艳艳》速度标记为 ♩=82，广板，演唱时注意气息连贯、情感饱满，尤其是“一道道的那个山来哟”这句的陕北韵味。</p >
+  </section>
 
-    <ul class="feature-list">
-      <li>基于汉字与音节的最小语义单元</li>
-      <li>无时态变形，通过语序与虚词表达时间</li>
-      <li>自然融入中文、日文、韩文汉字圈语感</li>
-      <li>可书写为拉丁字母转写或汉字混用</li>
-    </ul>
+  <!-- 交流分享 -->
+  <section class="section" id="share">
+    <h2>学习成果交流分享</h2>
+    <div class="divider"></div>
+    <p>这里将展示同学们的学习成果，包括学唱视频、赏析心得、调研图片等。欢迎每一位同学分享自己的红色音乐学习故事。</p >
+    <p>（后续可接入留言板或作品展示墙）</p >
+  </section>
 
-    <div class="example-box">
-      <div class="example-title">✦ 基础表达</div>
-      <p style="font-style: italic; color: #4b4a44; margin-bottom: 0.5rem;">「日出·东方」</p>
-      <div class="code-block">
-        taiyo   noboru   higashi
-        太阳    升起     东
-      </div>
-      <p style="font-size: 0.95rem; color: #5b5a52; margin-top: 0.5rem;">
-        直译：太阳 升起 东方。 语序即逻辑。
-      </p>
-    </div>
+  <footer>
+    <p>© 2026 听见延安十三年 · 延安十三年红色音乐高校美育资源平台</p >
+  </footer>
 
-    <div class="example-box">
-      <div class="example-title">✦ 诗歌片段</div>
-      <p style="font-style: italic; color: #4b4a44; margin-bottom: 0.5rem;">「山与月」</p>
-      <div class="code-block">
-        yama   shizuka   tsuki   miru
-        山     静       月     见
-      </div>
-      <p style="font-size: 0.95rem; color: #5b5a52; margin-top: 0.5rem;">
-        山静，月见。无需系词，意境自现。
-      </p>
-    </div>
-
-    <hr>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 2rem; font-size: 1rem; color: #3f3e38;">
-      <span style="font-weight: 500;">📖 快速开始</span>
-      <a href="#" style="color: #4a4944; text-decoration: none; border-bottom: 1px solid #c9c4b5;">阅读语法指南</a>
-      <a href="#" style="color: #4a4944; text-decoration: none; border-bottom: 1px solid #c9c4b5;">在线尝试</a>
-      <a href="#" style="color: #4a4944; text-decoration: none; border-bottom: 1px solid #c9c4b5;">贡献词汇</a>
-    </div>
-
-    <div class="footer">
-      <p>东语言项目 · <a href="#">GitHub</a> · <a href="#">联系</a></p>
-      <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #9a988f;">© 2025 dong-language · 建于思考与留白之间</p>
-    </div>
-  </div>
 </body>
 </html>
