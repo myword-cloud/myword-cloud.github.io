@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>东语言 · 项目主页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fcfcf9;
+      color: #2e2e2c;
+      font-family: "Noto Serif SC", "Times New Roman", "宋体", "Songti SC", Georgia, serif;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .project-title {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #1e1e1c;
+      border-bottom: 1px solid #d9d7cd;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      font-weight: 350;
+      color: #5f5e58;
+      margin: 0.5rem 0 1rem 0;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      font-size: 1rem;
+      color: #4a4944;
+      border-bottom: 1px solid #e2e0d5;
+      padding-bottom: 0.7rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4a4944;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #b45f2a;
+      text-decoration: underline;
+    }
+
+    .description {
+      font-size: 1.15rem;
+      color: #3a3934;
+      text-align: justify;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .description strong {
+      font-weight: 600;
+      color: #1f1f1d;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 1rem 0 2rem 0;
+    }
+
+    .feature-list li {
+      font-size: 1.05rem;
+      padding: 0.3rem 0 0.3rem 1.8rem;
+      position: relative;
+      color: #3f3e38;
+    }
+
+    .feature-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0.2rem;
+      color: #b45f2a;
+    }
+
+    .code-block {
+      background-color: #f4f3ef;
+      border-left: 4px solid #c9c4b5;
+      padding: 1.2rem 1.5rem;
+      font-family: "Courier New", monospace;
+      font-size: 0.95rem;
+      color: #3b3a35;
+      margin: 1rem 0;
+      white-space: pre-wrap;
+      line-height: 1.6;
+      border-radius: 2px;
+    }
+
+    .example-box {
+      background: #fafaf7;
+      border: 1px solid #e4e1d6;
+      padding: 1.4rem 1.6rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .example-title {
+      font-weight: 550;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: #1f1f1c;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0ddd0;
+      margin: 2rem 0;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #7a7970;
+      text-align: center;
+      border-top: 1px solid #e2dfd3;
+      padding-top: 2rem;
+    }
+
+    .footer a {
+      color: #7a7970;
+      text-decoration: none;
+      border-bottom: 1px dotted #b7b3a4;
+    }
+
+    .footer a:hover {
+      color: #b45f2a;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .project-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="project-title">东语言</h1>
+    <p class="subtitle">一种探索东方思维与简洁表达的实验语言</p>
+    
+    <div class="nav-links">
+      <a href="#">概览</a>
+      <a href="#">语法</a>
+      <a href="#">示例</a>
+      <a href="#">文档</a>
+      <a href="#">GitHub</a>
+    </div>
+
+    <p class="description">
+      <strong>东语言 (dong-language)</strong> 是一个极简主义的人造语言项目，受东方哲学与自然语言演化启发。
+      它试图用最少的规则与词汇，构建清晰、优雅且富有诗意的表达。该项目完全开源，
+      欢迎语言爱好者、创作者与开发者共同实验。
+    </p>
+    
+    <p class="description">
+      设计原则：<strong>一字一义，音形相合。</strong> 语法透明，避免冗余修饰。句子结构遵循"话题-说明"逻辑，
+      使思维流动如水墨。目前处于早期开发阶段，核心词汇约200词。
+    </p>
+
+    <ul class="feature-list">
+      <li>基于汉字与音节的最小语义单元</li>
+      <li>无时态变形，通过语序与虚词表达时间</li>
+      <li>自然融入中文、日文、韩文汉字圈语感</li>
+      <li>可书写为拉丁字母转写或汉字混用</li>
+    </ul>
+
+    <div class="example-box">
+      <div class="example-title">✦ 基础表达</div>
+      <p style="font-style: italic; color: #4b4a44; margin-bottom: 0.5rem;">「日出·东方」</p>
+      <div class="code-block">
+        taiyo   noboru   higashi
+        太阳    升起     东
+      </div>
+      <p style="font-size: 0.95rem; color: #5b5a52; margin-top: 0.5rem;">
+        直译：太阳 升起 东方。 语序即逻辑。
+      </p>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">✦ 诗歌片段</div>
+      <p style="font-style: italic; color: #4b4a44; margin-bottom: 0.5rem;">「山与月」</p>
+      <div class="code-block">
+        yama   shizuka   tsuki   miru
+        山     静       月     见
+      </div>
+      <p style="font-size: 0.95rem; color: #5b5a52; margin-top: 0.5rem;">
+        山静，月见。无需系词，意境自现。
+      </p>
+    </div>
+
+    <hr>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; font-size: 1rem; color: #3f3e38;">
+      <span style="font-weight: 500;">📖 快速开始</span>
+      <a href="#" style="color: #4a4944; text-decoration: none; border-bottom: 1px solid #c9c4b5;">阅读语法指南</a>
+      <a href="#" style="color: #4a4944; text-decoration: none; border-bottom: 1px solid #c9c4b5;">在线尝试</a>
+      <a href="#" style="color: #4a4944; text-decoration: none; border-bottom: 1px solid #c9c4b5;">贡献词汇</a>
+    </div>
+
+    <div class="footer">
+      <p>东语言项目 · <a href="#">GitHub</a> · <a href="#">联系</a></p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #9a988f;">© 2025 dong-language · 建于思考与留白之间</p>
+    </div>
+  </div>
+</body>
+</html>
